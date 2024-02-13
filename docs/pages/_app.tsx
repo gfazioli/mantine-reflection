@@ -1,4 +1,4 @@
-import '@gfazioli/mantine-flip/styles.css';
+import '@gfazioli/mantine-reflection/styles.css';
 import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import '@mantinex/demo/styles.css';
@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <MantineProvider theme={theme}>
       <Head>
-        <title>Mantine Flip</title>
+        <title>Mantine Reflection</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"

@@ -1,21 +1,19 @@
 {
-  "name": "@gfazioli/mantine-flip",
-  "version": "1.0.13",
-  "description": "Flip component is a wrapper for any component that can be flipped. It is used to create cards, flip boxes and more.",
-  "homepage": "https://gfazioli.github.io/mantine-flip/",
+  "name": "@gfazioli/mantine-reflection",
+  "version": "0.1.0",
+  "description": "Mantine Reflection is a React component that allows you to create a reflection effect on an image or any other component.",
+  "homepage": "https://gfazioli.github.io/mantine-reflection/",
   "packageManager": "yarn@4.0.1",
   "license": "MIT",
   "author": "Giovambattista Fazioli <giovambattista.fazioli@gmail.com>",
   "keywords": [
     "extension",
     "mantine",
+    "mirror",
     "react",
-    "typescript",
     "react-component",
-    "animation",
-    "card",
-    "flip",
-    "widget"
+    "reflection",
+    "typescript"
   ],
   "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.mjs",
@@ -34,7 +32,7 @@
     "./styles.css": "./dist/styles.css",
     "./styles.layer.css": "./dist/styles.layer.css"
   },
-  "repository": "git+https://github.com/gfazioli/mantine-flip.git",
+  "repository": "git+https://github.com/gfazioli/mantine-reflection.git",
   "workspaces": [
     "docs"
   ],
@@ -44,5 +42,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "bugs": "https://github.com/gfazioli/mantine-flip/issues"
+  "bugs": "https://github.com/gfazioli/mantine-reflection/issues"
 }

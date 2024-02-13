@@ -1,0 +1,47 @@
+.root {
+  position: relative;
+  display: inline-block;
+
+  & > *:first-child {
+    position: relative;
+  }
+
+  &[data-shadow] {
+
+    & > *:first-child::after {
+      content: '';
+      position: absolute;
+      bottom: var(--shadow-offset, 0);
+      left: 0;
+      width: 100%;
+      height: var(--shadow-size, 10);
+      background: radial-gradient(ellipse at center, var(--shadow-color, 'black') 0%, rgba(0,0,0,0) 70%);
+      transform: scaleX(var(--shadow-scale-x, 1.1)) scaleY(var(--shadow-scale-y, 1)) ;
+      opacity: var(--shadow-opacity);
+      /** apply the blur filter to the shadow */
+      filter: blur(var(--shadow-blur));
+      z-index: -1;
+    }
+  }
+}
+
+.reflection {
+  --reflection-distance-xs: rem(18px);
+  --reflection-distance-sm: rem(22px);
+  --reflection-distance-md: rem(28px);
+  --reflection-distance-lg: rem(34px);
+  --reflection-distance-xl: rem(44px);
+
+  position: absolute;
+  top: calc(100% + var(--reflection-distance, 0));
+  transform: scaleY(-1) scaleY(var(--reflection-stretch, 1));
+  opacity: var(--reflection-opacity);
+  -webkit-mask-image: linear-gradient(to bottom, transparent var(--reflection-start), black var(--reflection-end));
+  mask-image: linear-gradient(to bottom, transparent var(--reflection-start), black var(--reflection-end));
+  pointer-events: none;
+  filter: blur(var(--reflection-blur));
+  z-index: -2;
+}
+
+
+

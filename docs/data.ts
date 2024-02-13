@@ -25,12 +25,11 @@ export interface PackageData {
 }
 
 export const PACKAGE_DATA: PackageData = {
-  packageName: '@gfazioli/mantine-flip',
-  packageDescription:
-    'A Mantine component that flips the content of the component when hovered over.',
-  mdxFileUrl: 'https://github.com/gfazioli/mantine-flip/blob/master/docs/pages/index.mdx',
-  repositoryUrl: 'https://github.com/gfazioli/mantine-flip',
-  licenseUrl: 'https://github.com/gfazioli/mantine-flip/blob/master/LICENSE',
+  packageName: '@gfazioli/mantine-reflection',
+  packageDescription: 'A Mantine component that adds a reflection effect to its children.',
+  mdxFileUrl: 'https://github.com/gfazioli/mantine-reflection/blob/master/docs/pages/index.mdx',
+  repositoryUrl: 'https://github.com/gfazioli/mantine-reflection',
+  licenseUrl: 'https://github.com/gfazioli/mantine-reflection/blob/master/LICENSE',
   author: {
     name: 'Giovambattista Fazioli',
     githubUsername: 'gfazioli',

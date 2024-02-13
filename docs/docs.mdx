@@ -3,36 +3,28 @@ import * as demos from './demos';
 
 ## Installation
 
-<InstallScript packages="@gfazioli/mantine-flip" />
+<InstallScript packages="@gfazioli/mantine-reflection" />
 
 ## Usage
 
+The `Reflection` component simply wraps the content to be reflected.
+
 <Demo data={demos.configurator} />
 
-## Uncontrollded
+## The Image tag
 
-<Demo data={demos.uncontrolled} />
+The `img` tag requires to be in `display: block` in order to avoid padding below it. For this reason, a `style` has been added to force the behavior.
 
-## Controllded
+<Demo data={demos.simpleImage} />
 
-You may control the state of the card by setting the `flipped` prop to `true` or `false`.
-This is useful when you want to control the state of the card from the parent component.
+## Components
 
-<Demo data={demos.controlled} />
+You may use the `Reflection` component to reflect other components.
 
-> **Inital face and Flip.Target**
->
-> For controlled Flip components, you will use `useState` to determine which side of the component to initially show.
-> Additionally, you will not need to use `Flip.Target` for buttons, but you can control them manually to keep the states synchronized.
+<Demo data={demos.component} />
 
+## Complex components
 
-## Default Flipped (face)
+For complex components, you may need to disable certain components to prevent the mirrored version from functioning as a copy. In this example, we used the prop `disableChildren` for the right component. Mouse click is always disabled via CSS, but moving with the TAB key will focus on the mirrored component.
 
-You may display the initial face of the card by setting the `defaultFlipped` prop to `true`.
-
-<Demo data={demos.defaultFlipped} />
-
-## More examples
-
-<Demo data={demos.signin} />
-
+<Demo data={demos.complexComponent} />

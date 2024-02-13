@@ -1,10 +1,2 @@
-export { Flip } from './Flip';
-export type {
-  FlipBaseProps,
-  FlipCssVariables,
-  FlipDirection,
-  FlipFactory,
-  FlipIn,
-  FlipOut,
-} from './Flip';
-export { useFlipContext } from './Flip.context';
+export { Reflection } from './Reflection';
+export type { ReflectionBaseProps, ReflectionCssVariables, ReflectionFactory } from './Reflection';

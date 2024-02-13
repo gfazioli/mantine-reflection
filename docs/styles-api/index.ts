@@ -1,5 +1,5 @@
-import { FlipStylesApi } from './Flip.styles-api';
+import { ReflectionStylesApi } from './Reflection.styles-api';
 
 export const STYLES_API_DATA = {
-  Flip: FlipStylesApi,
+  Reflection: ReflectionStylesApi,
 };

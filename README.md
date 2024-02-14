@@ -1,7 +1,7 @@
 # Mantine Reflection Component
 
 <p align="center">
-
+<img width="838" alt="image" src="https://github.com/gfazioli/mantine-reflection/assets/432181/74c716a8-6fba-44a2-8f3d-517772e056f7">
 </p>
 
 ---

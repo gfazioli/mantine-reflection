@@ -8,7 +8,7 @@ function Wrapper(props: any) {
       <Reflection {...props}>
         <img
           width={150}
-          style={{ padding: 14, display: 'block', borderRadius: '50%' }}
+          style={{ display: 'block', borderRadius: '50%' }}
           alt="test"
           src="https://source.unsplash.com/9QmbsTDAI4g/150x150"
         />

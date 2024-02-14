@@ -15,7 +15,7 @@ function Wrapper() {
               alt="test"
               src="https://source.unsplash.com/k5brbv8T3yE/150x150"
             />
-            <Input autoFocus placeholder="Click and press TAB 2 times" />
+            <Input placeholder="Click and press TAB 2 times" />
             <Button>Cancel</Button>
           </Stack>
         </Paper>
@@ -43,39 +43,38 @@ const code = `
 import { Reflection } from '@gfazioli/mantine-reflection'';
 
 function Demo() {
-  return (
-    <Group mt="5%" gap={100} justify="center">
-      <Reflection>
-        <Paper withBorder w={200} p={16}>
-          <Stack>
-            <img
-              style={{
-                borderRadius: '8px',
-              }}
-              alt="test"
-              src="https://source.unsplash.com/k5brbv8T3yE/150x150"
-            />
-            <Input placeholder="Your name" />
-            <Button>Cancel</Button>
-          </Stack>
-        </Paper>
-      </Reflection>
-      <Reflection disableChildren>
-        <Paper withBorder w={200} p={16}>
-          <Stack>
-            <img
-              style={{
-                borderRadius: '8px',
-              }}
-              alt="test"
-              src="https://source.unsplash.com/k5brbv8T3yE/150x150"
-            />
-            <Input placeholder="Your name" />
-            <Button>Cancel</Button>
-          </Stack>
-        </Paper>
-      </Reflection>
-    </Group>
+  <Group mt="5%" gap={120} justify="center">
+    <Reflection>
+      <Paper withBorder w={230} p={16}>
+        <Stack>
+          <img
+            style={{
+              borderRadius: '8px',
+            }}
+            alt="test"
+            src="https://source.unsplash.com/k5brbv8T3yE/150x150"
+          />
+          <Input placeholder="Click and press TAB 2 times" />
+          <Button>Cancel</Button>
+        </Stack>
+      </Paper>
+    </Reflection>
+    <Reflection disableChildren>
+      <Paper withBorder w={230} p={16}>
+        <Stack>
+          <img
+            style={{
+              borderRadius: '8px',
+            }}
+            alt="test"
+            src="https://source.unsplash.com/k5brbv8T3yE/150x150"
+          />
+          <Input placeholder="Your name" />
+          <Button>Cancel</Button>
+        </Stack>
+      </Paper>
+    </Reflection>
+  </Group>
   );
 }
 `;

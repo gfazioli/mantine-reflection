@@ -15,7 +15,9 @@
     <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/%40gfazioli%2Fmantine-reflection?style=for-the-badge">
   </a>
 
-  <img alt="NPM License" src="https://img.shields.io/npm/l/%40gfazioli%2Fmantine-reflection?style=for-the-badge">
+  <a aria-label="NPM License" href="https://github.com/gfazioli/mantine-flip/blob/master/LICENSE">
+    <img alt="NPM License" src="https://img.shields.io/npm/l/%40gfazioli%2Fmantine-reflection?style=for-the-badge">
+  </a>
 
 </p>
 

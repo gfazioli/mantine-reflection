@@ -11,6 +11,8 @@ The `Reflection` component simply wraps the content to be reflected.
 
 <Demo data={demos.configurator} />
 
+> **Reflection Blur**: The `Reflection` component has a `reflectionBlur` prop that can be used to add a blur effect to the reflection. The value is a number that represents the amount of blur in pixels. The default value is `0`. You will probably notice that in the image above, as the blur effect on the reflection increases, the edges of the image will be cut off. To avoid this problem, you can adjust the blur effect with low values or apply padding to the component/image to be reflected.
+
 ## The Image tag
 
 The `img` tag requires to be in `display: block` in order to avoid padding below it. For this reason, a `style` has been added to force the behavior.

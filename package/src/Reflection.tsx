@@ -5,8 +5,8 @@ import {
   MantineSize,
   StylesApiProps,
   createVarsResolver,
+  factory,
   getSize,
-  polymorphicFactory,
   rem,
   useProps,
   useStyles,
@@ -84,8 +84,7 @@ export interface ReflectionProps
 
 export type ReflectionFactory = Factory<{
   props: ReflectionProps;
-  defaultComponent: 'div';
-  defaultRef: HTMLDivElement;
+  ref: HTMLDivElement;
   stylesNames: ReflectionStylesNames;
   vars: ReflectionCssVariables;
 }>;
@@ -155,7 +154,7 @@ type DisabledRecursiveProps = {
   children: ReactNode;
 };
 
-export const Reflection = polymorphicFactory<ReflectionFactory>((_props, ref) => {
+export const Reflection = factory<ReflectionFactory>((_props, ref) => {
   const props = useProps('Reflection', defaultProps, _props);
   const {
     reflectionDistance,

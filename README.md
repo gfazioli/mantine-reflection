@@ -37,6 +37,12 @@ or
 yarn add @gfazioli/mantine-reflection
 ```
 
+After installation import package styles at the root of your application:
+
+```tsx
+import '@gfazioli/mantine-reflection/styles.css';
+```
+
 ## Usage
 
 ```tsx

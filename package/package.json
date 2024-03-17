@@ -1,6 +1,6 @@
 {
   "name": "@gfazioli/mantine-reflection",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Mantine Reflection is a React component that allows you to create a reflection effect on an image or any other component.",
   "homepage": "https://gfazioli.github.io/mantine-reflection/",
   "packageManager": "yarn@4.0.1",

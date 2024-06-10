@@ -1,6 +1,6 @@
 # Contributing
 
-👏 Thank you for considering contributing to the WP Bones framework!
+👏 Thank you for considering contributing to this project.
 
 ## Bug Reports
 
@@ -13,6 +13,6 @@ Furthermore, providing information such as system specifications, error messages
 
 ## Code contributors
 
-Here's a list of all the people who have contributed to the codebase of this project so far:
+Here is a list of all the people who have contributed to the codebase of this project so far:
 
 [![Contributors list](https://contrib.rocks/image?repo=gfazioli/mantine-reflection)](https://github.com/gfazioli/mantine-reflection/graphs/contributors)

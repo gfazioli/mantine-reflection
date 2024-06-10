@@ -25,6 +25,7 @@
 
 This component is created on top of the [Mantine](https://mantine.dev/) library.
 Adds a reflection effect to a component. It simply wraps the content to be reflected.
+You can find more components on the [Mantine Extensions Hub](https://mantine-extensions.vercel.app/) library.
 
 ## Installation
 

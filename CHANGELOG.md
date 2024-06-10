@@ -1,6 +1,6 @@
 # Changelog
 
-The following is a list of notable changes to the Mantine Split component.  
+The following is a list of notable changes to the Mantine Reflection component.  
 Minor versions that are not listed in the changelog are bug fixes and small improvements.
 
 ## 0.1.4 (2024-03-17)

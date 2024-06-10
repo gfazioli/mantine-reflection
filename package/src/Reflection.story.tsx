@@ -34,7 +34,7 @@ export function Usage(props: ReflectionProps) {
           width={150}
           style={{ display: 'block' }}
           alt="test"
-          src="https://source.unsplash.com/o50naWbTCd0/150x150"
+          src="https://picsum.photos/150/150"
         />
       </Reflection>
     </Center>
@@ -49,7 +49,7 @@ export function Image(props: ReflectionProps) {
           width={150}
           style={{ display: 'block', borderRadius: '50%' }}
           alt="test"
-          src="https://source.unsplash.com/9QmbsTDAI4g/150x150"
+          src="https://picsum.photos/150/150"
         />
       </Reflection>
     </Center>
@@ -77,7 +77,7 @@ export function ComplexComponent(props: ReflectionProps) {
                 borderRadius: '8px',
               }}
               alt="test"
-              src="https://source.unsplash.com/k5brbv8T3yE/150x150"
+              src="https://picsum.photos/150/150"
             />
             <Input placeholder="Your name" />
             <Button>Cancel</Button>

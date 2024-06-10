@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "@gfazioli/mantine-reflection": "workspace:*",
-    "@mantine/core": "7.6.2",
-    "@mantine/hooks": "7.6.2",
+    "@mantine/core": "7.10.1",
+    "@mantine/hooks": "7.10.1",
     "@mantinex/demo": "^1.1.0",
     "@mantinex/dev-icons": "^1.0.2",
     "@mantinex/mantine-header": "^1.0.2",

@@ -1,6 +1,6 @@
-import { Reflection } from '@gfazioli/mantine-reflection';
-import { Button, Group, Input, Paper, Stack } from '@mantine/core';
-import { MantineDemo } from '@mantinex/demo';
+import { Reflection } from "@gfazioli/mantine-reflection";
+import { Button, Group, Input, Paper, Stack } from "@mantine/core";
+import { MantineDemo } from "@mantinex/demo";
 
 function Wrapper() {
   return (
@@ -10,10 +10,10 @@ function Wrapper() {
           <Stack>
             <img
               style={{
-                borderRadius: '8px',
+                borderRadius: "8px",
               }}
               alt="test"
-              src="https://source.unsplash.com/k5brbv8T3yE/150x150"
+              src="https://picsum.photos/150/150"
             />
             <Input placeholder="Click and press TAB 2 times" />
             <Button>Cancel</Button>
@@ -25,10 +25,10 @@ function Wrapper() {
           <Stack>
             <img
               style={{
-                borderRadius: '8px',
+                borderRadius: "8px",
               }}
               alt="test"
-              src="https://source.unsplash.com/k5brbv8T3yE/150x150"
+              src="https://picsum.photos/150/150"
             />
             <Input placeholder="Your name" />
             <Button>Cancel</Button>
@@ -80,7 +80,7 @@ function Demo() {
 `;
 
 export const complexComponent: MantineDemo = {
-  type: 'code',
+  type: "code",
   component: Wrapper,
   minHeight: 600,
   code,

@@ -1,9 +1,9 @@
 {
   "description": "This package.json is not published to npm, modify the file in package/package.json",
   "devDependencies": {
-    "@mantine-tests/core": "^1.0.1",
-    "@mantine/core": "7.14.0",
-    "@mantine/hooks": "7.14.0",
+    "@mantine-tests/core": "^1.1.0",
+    "@mantine/core": "7.14.3",
+    "@mantine/hooks": "7.14.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.4",
     "@storybook/addon-essentials": "^7.6.19",
@@ -71,7 +71,7 @@
     "yargs": "^17.7.2"
   },
   "name": "m-90d2bb8",
-  "packageManager": "yarn@4.5.1",
+  "packageManager": "yarn@4.5.3",
   "scripts": {
     "build": "rollup -c rollup.config.mjs && esno scripts/generate-dts && esno scripts/prepare-css",
     "clean": "rimraf package/dist",

@@ -1,17 +1,17 @@
+import React, { ReactNode } from 'react';
 import {
   Box,
   BoxProps,
-  Factory,
-  MantineSize,
-  StylesApiProps,
   createVarsResolver,
+  Factory,
   factory,
   getSize,
+  MantineSize,
   rem,
+  StylesApiProps,
   useProps,
   useStyles,
 } from '@mantine/core';
-import React from 'react';
 import classes from './Reflection.module.css';
 
 export type ReflectionStylesNames = 'root' | 'reflection';
@@ -148,8 +148,6 @@ const varsResolver = createVarsResolver<ReflectionFactory>(
   }
 );
 
-import { ReactNode } from 'react';
-
 type DisabledRecursiveProps = {
   children: ReactNode;
 };
@@ -215,10 +213,12 @@ export const Reflection = factory<ReflectionFactory>((_props, ref) => {
       return React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
           const updatedProps = {
-            ...child.props,
+            ...(child as React.ReactElement<any>).props,
             disabled: true,
           };
-          const updatedChildren = setDisabledRecursive(child.props.children);
+          const updatedChildren = setDisabledRecursive(
+            (child as React.ReactElement<any>).props.children
+          );
           return React.cloneElement(child, updatedProps, updatedChildren);
         }
         return child;

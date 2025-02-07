@@ -1,5 +1,5 @@
-import { render, tests } from '@mantine-tests/core';
 import React from 'react';
+import { render, tests } from '@mantine-tests/core';
 import { Reflection, ReflectionProps, ReflectionStylesNames } from './Reflection';
 
 const defaultProps: ReflectionProps = {};

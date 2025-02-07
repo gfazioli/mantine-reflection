@@ -1,6 +1,6 @@
-import { Reflection } from "@gfazioli/mantine-reflection";
-import { Button, Group, Input, Paper, Stack } from "@mantine/core";
-import { MantineDemo } from "@mantinex/demo";
+import { Reflection } from '@gfazioli/mantine-reflection';
+import { Button, Group, Input, Paper, Stack } from '@mantine/core';
+import { MantineDemo } from '@mantinex/demo';
 
 function Wrapper() {
   return (
@@ -10,7 +10,7 @@ function Wrapper() {
           <Stack>
             <img
               style={{
-                borderRadius: "8px",
+                borderRadius: '8px',
               }}
               alt="test"
               src="https://picsum.photos/150/150"
@@ -25,7 +25,7 @@ function Wrapper() {
           <Stack>
             <img
               style={{
-                borderRadius: "8px",
+                borderRadius: '8px',
               }}
               alt="test"
               src="https://picsum.photos/150/150"
@@ -80,7 +80,7 @@ function Demo() {
 `;
 
 export const complexComponent: MantineDemo = {
-  type: "code",
+  type: 'code',
   component: Wrapper,
   minHeight: 600,
   code,

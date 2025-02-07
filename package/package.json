@@ -39,5 +39,5 @@
   },
   "repository": "https://github.com/gfazioli/mantine-reflection.git",
   "types": "./dist/types/index.d.ts",
-  "version": "1.0.0"
+  "version": "1.1.0"
 }

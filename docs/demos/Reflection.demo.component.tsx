@@ -13,13 +13,13 @@ function Wrapper(props: any) {
 }
 
 const code = `
-import { Reflection } from '@gfazioli/mantine-reflection'';
+import { Reflection } from '@gfazioli/mantine-reflection';
 
 function Demo() {
   return (
     <Reflection>
       <Button>Hello World!</Button>
-  </Reflection>
+    </Reflection>
   );
 }
 `;
@@ -29,4 +29,5 @@ export const component: MantineDemo = {
   component: Wrapper,
   minHeight: 100,
   code,
+  defaultExpanded: false,
 };

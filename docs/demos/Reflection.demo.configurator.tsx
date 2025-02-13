@@ -1,33 +1,26 @@
 import { Reflection } from '@gfazioli/mantine-reflection';
-import { Center } from '@mantine/core';
 import { MantineDemo } from '@mantinex/demo';
 
 function Wrapper(props: any) {
   return (
-    <Center mt="50%">
-      <Reflection {...props}>
-        <img
-          width={150}
-          style={{ display: 'block', borderRadius: '50%' }}
-          alt="test"
-          src="https://picsum.photos/150/150"
-        />
-      </Reflection>
-    </Center>
-  );
-}
-
-const code = `
-import { Reflection } from '@gfazioli/mantine-reflection'';
-
-function Demo() {
-  return (
-    <Reflection{{props}}>
+    <Reflection {...props}>
       <img
         width={150}
         style={{ display: 'block', borderRadius: '50%' }}
         alt="test"
         src="https://picsum.photos/150/150"
+      />
+    </Reflection>
+  );
+}
+
+const code = `
+import { Reflection } from '@gfazioli/mantine-reflection';
+
+function Demo() {
+  return (
+    <Reflection{{props}}>
+      <img width={150} style={{ display: 'block', borderRadius: '50%' }} alt="test" src="https://picsum.photos/150/150"
       />
     </Reflection>
   );
@@ -38,6 +31,7 @@ export const configurator: MantineDemo = {
   type: 'configurator',
   component: Wrapper,
   code,
+  centered: true,
   controls: [
     {
       prop: 'disableChildren',

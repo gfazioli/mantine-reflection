@@ -22,7 +22,7 @@ function Wrapper(props: any) {
 }
 
 const code = `
-import { Reflection } from '@gfazioli/mantine-reflection'';
+import { Reflection } from '@gfazioli/mantine-reflection';
 
 function Demo() {
   return (
@@ -49,4 +49,5 @@ export const simpleImage: MantineDemo = {
   component: Wrapper,
   minHeight: 300,
   code,
+  defaultExpanded: false,
 };

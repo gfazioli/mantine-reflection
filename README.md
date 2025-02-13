@@ -1,25 +1,22 @@
 # Mantine Reflection Component
 
-<p align="center">
-<img width="838" alt="image" src="https://github.com/gfazioli/mantine-reflection/assets/432181/74c716a8-6fba-44a2-8f3d-517772e056f7">
-</p>
+<div align="center">
+  
+  ![image](https://github.com/gfazioli/mantine-reflection/assets/432181/74c716a8-6fba-44a2-8f3d-517772e056f7)
+
+</div>
 
 ---
 
-<p align="center">
-  <a aria-label="NPM version" href="https://www.npmjs.com/package/@gfazioli/mantine-reflection">
-    <img alt="NPM version" src="https://img.shields.io/npm/v/%40gfazioli%2Fmantine-reflection?style=for-the-badge">
-  </a>
-  
-  <a aria-label="NPM version" href="https://www.npmjs.com/package/@gfazioli/mantine-reflection">
-    <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/%40gfazioli%2Fmantine-reflection?style=for-the-badge">
-  </a>
+<div align="center">
 
-  <a aria-label="NPM License" href="https://github.com/gfazioli/mantine-flip/blob/master/LICENSE">
-    <img alt="NPM License" src="https://img.shields.io/npm/l/%40gfazioli%2Fmantine-reflection?style=for-the-badge">
-  </a>
+  [![NPM version](https://img.shields.io/npm/v/%40gfazioli%2Fmantine-reflection?style=for-the-badge)](https://www.npmjs.com/package/@gfazioli/mantine-reflection)
+  [![NPM Downloads](https://img.shields.io/npm/dm/%40gfazioli%2Fmantine-reflection?style=for-the-badge)](https://www.npmjs.com/package/@gfazioli/mantine-reflection)
+  [![NPM Downloads](https://img.shields.io/npm/dy/%40gfazioli%2Fmantine-reflection?style=for-the-badge&label=%20&color=f90)](https://www.npmjs.com/package/@gfazioli/mantine-reflection)
+  [![NPM License](https://img.shields.io/npm/l/%40gfazioli%2Fmantine-reflection?style=for-the-badge)](https://github.com/gfazioli/mantine-flip/blob/master/LICENSE)
 
-</p>
+
+</div>
 
 ## Overview
 

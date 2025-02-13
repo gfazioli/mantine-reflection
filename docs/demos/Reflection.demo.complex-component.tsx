@@ -40,7 +40,7 @@ function Wrapper() {
 }
 
 const code = `
-import { Reflection } from '@gfazioli/mantine-reflection'';
+import { Reflection } from '@gfazioli/mantine-reflection';
 
 function Demo() {
   <Group mt="5%" gap={120} justify="center">
@@ -84,4 +84,5 @@ export const complexComponent: MantineDemo = {
   component: Wrapper,
   minHeight: 600,
   code,
+  defaultExpanded: false,
 };

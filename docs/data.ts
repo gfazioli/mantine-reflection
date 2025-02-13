@@ -27,7 +27,7 @@ export interface PackageData {
 export const PACKAGE_DATA: PackageData = {
   packageName: '@gfazioli/mantine-reflection',
   packageDescription: 'A Mantine component that adds a reflection effect to its children.',
-  mdxFileUrl: 'https://github.com/gfazioli/mantine-reflection/blob/master/docs/pages/index.mdx',
+  mdxFileUrl: 'https://github.com/gfazioli/mantine-reflection/blob/master/docs/docs.mdx',
   repositoryUrl: 'https://github.com/gfazioli/mantine-reflection',
   licenseUrl: 'https://github.com/gfazioli/mantine-reflection/blob/master/LICENSE',
   author: {

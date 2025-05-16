@@ -139,8 +139,8 @@ const varsResolver = createVarsResolver<ReflectionFactory>(
       reflection: {
         '--reflection-distance': getSize(reflectionDistance, 'reflection-distance'),
         '--reflection-opacity': reflectionOpacity.toString() as string,
-        '--reflection-start': ((reflectionStart?.toString() || '25') + '%') as string,
-        '--reflection-end': ((reflectionEnd?.toString() || '75') + '%') as string,
+        '--reflection-start': `${reflectionStart?.toString() || '25'}%` as string,
+        '--reflection-end': `${reflectionEnd?.toString() || '75'}%` as string,
         '--reflection-stretch': reflectionStretch?.toString() || '1',
         '--reflection-blur': rem(reflectionBlur || 0),
       },
@@ -231,7 +231,7 @@ export const Reflection = factory<ReflectionFactory>((_props, ref) => {
   };
 
   return (
-    <Box ref={ref} {...getStyles('root')} {...others} mod={{ shadow: shadow }}>
+    <Box ref={ref} {...getStyles('root')} {...others} mod={{ shadow }}>
       <div>{children}</div>
       <div {...getStyles('reflection')}>
         <DisabledRecursiveComponent>{children}</DisabledRecursiveComponent>

@@ -94,3 +94,8 @@ function Demo() {
 | shadowSize        | number \| MantineSize \| (string & {})    | The size of the shadow                         |
 
 
+<div align="center">
+  
+[![Star History Chart](https://api.star-history.com/svg?repos=gfazioli/mantine-reflection&type=Timeline)](https://www.star-history.com/#gfazioli/mantine-reflection&Timeline)
+
+</div>

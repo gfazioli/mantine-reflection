@@ -1,6 +1,6 @@
 # Mantine Reflection Component
 
-<img width="2752" height="1536" alt="Gemini_Generated_Image_gnx8sjgnx8sjgnx8" src="https://github.com/user-attachments/assets/0ee9a3d4-5375-4713-8739-861cccebec66" />
+<img width="2752" height="1536" alt="Mantine Reflection" src="https://github.com/user-attachments/assets/7280a786-0e01-4ae4-96be-69f6c02e9081" />
 
 <div align="center">
 

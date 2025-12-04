@@ -1,12 +1,6 @@
 # Mantine Reflection Component
 
-<div align="center">
-  
-  ![image](https://github.com/gfazioli/mantine-reflection/assets/432181/74c716a8-6fba-44a2-8f3d-517772e056f7)
-
-</div>
-
----
+<img width="2752" height="1536" alt="Gemini_Generated_Image_gnx8sjgnx8sjgnx8" src="https://github.com/user-attachments/assets/0ee9a3d4-5375-4713-8739-861cccebec66" />
 
 <div align="center">
 
@@ -71,28 +65,6 @@ function Demo() {
   );
 }
 ```
-
-## Props
-
-| Name              | Type              | Description                                   |
-| ----------------- | ----------------- | --------------------------------------------- |
-| children          | React.ReactNode  | Children to reflect                           |
-| disableChildren   | boolean           | Disable the children                          |
-| reflectionBlur    | number            | The blur of the reflection                     |
-| reflectionDistance| number \| MantineSize \| (string & {})    | The distance of the reflection from the original element|
-| reflectionEnd     | number            | The end of the reflection (gradient)           |
-| reflectionOpacity | number            | The opacity of the reflection                  |
-| reflectionStart   | number            | The start of the reflection (gradient)         |
-| reflectionStretch | number            | The stretch of the reflection. May you should adjust the reflectionDistance|
-| shadow            | boolean           | Shadow props                                  |
-| shadowBlur        | number            | The blur of the shadow                        |
-| shadowColor       | string            | The color of the shadow                       |
-| shadowOffset      | number            | The offset of the shadow                      |
-| shadowOpacity     | number            | The opacity of the shadow                     |
-| shadowScaleX      | number            | The scale of the shadow in the x-axis         |
-| shadowScaleY      | number            | The scale of the shadow in the y-axis         |
-| shadowSize        | number \| MantineSize \| (string & {})    | The size of the shadow                         |
-
 
 <div align="center">
   

@@ -78,9 +78,7 @@ export interface ReflectionBaseProps {
 }
 
 export interface ReflectionProps
-  extends BoxProps,
-    ReflectionBaseProps,
-    StylesApiProps<ReflectionFactory> {}
+  extends BoxProps, ReflectionBaseProps, StylesApiProps<ReflectionFactory> {}
 
 export type ReflectionFactory = Factory<{
   props: ReflectionProps;

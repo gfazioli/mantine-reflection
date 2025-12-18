@@ -16,19 +16,14 @@
 
 This component is created on top of the [Mantine](https://mantine.dev/) library.
 
-[![Mantine UI Library](https://img.shields.io/badge/-MANTINE_UI_LIBRARY-blue?style=for-the-badge&labelColor=black&logo=mantine
-)](https://mantine.dev/)
+[Mantine Reflection](https://gfazioli.github.io/mantine-mask/) provides a simple wrapper—Reflection—that adds a mirrored version of its children, enabling polished visual effects for images and components within Mantine‑based interfaces. Developers can tune reflection characteristics including distance from the source, opacity, blur level, stretch, and gradient start/end to achieve subtle or pronounced looks. It also includes comprehensive shadow controls (offset, opacity, blur, size, scale X/Y, and color) to complement the reflection for more realistic depth.
 
-Adds a reflection effect to a component. It simply wraps the content to be reflected.
+The package ships global styles via styles.css and a layer‑scoped variant via styles.layer.css for integration with CSS @layer mantine-reflection. When reflecting images, setting display: block on img prevents baseline padding artifacts. A dedicated reflectionBlur prop adds pixel‑based blur to the reflection, with guidance to use small values or padding to avoid edge clipping. Overall, the component is designed to be drop‑in, flexible, and precise for creating refined mirror and shadow effects around arbitrary React children.
 
-[![Mantine Extensions](https://img.shields.io/badge/-Watch_the_Video-blue?style=for-the-badge&labelColor=black&logo=youtube
-)](https://www.youtube.com/playlist?list=PL85tTROKkZrWyqCcmNCdWajpx05-cTal4)
-[![Demo and Documentation](https://img.shields.io/badge/-Demo_%26_Documentation-blue?style=for-the-badge&labelColor=black&logo=typescript
-)](https://gfazioli.github.io/mantine-reflection/)
-[![Mantine Extensions HUB](https://img.shields.io/badge/-Mantine_Extensions_Hub-blue?style=for-the-badge&labelColor=blue
-)](https://mantine-extensions.vercel.app/)
+> [!note]
+>
+> → [Demo and Documentation](https://gfazioli.github.io/mantine-mask/) → [Youtube Video](https://www.youtube.com/playlist?list=PL85tTROKkZrWyqCcmNCdWajpx05-cTal4) → [More Mantine Components](https://mantine-extensions.vercel.app/)
 
-👉 You can find more components on the [Mantine Extensions Hub](https://mantine-extensions.vercel.app/) library.
 
 ## Installation
 
@@ -66,8 +61,6 @@ function Demo() {
 }
 ```
 
-<div align="center">
+---
   
 [![Star History Chart](https://api.star-history.com/svg?repos=gfazioli/mantine-reflection&type=Timeline)](https://www.star-history.com/#gfazioli/mantine-reflection&Timeline)
-
-</div>

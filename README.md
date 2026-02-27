@@ -1,6 +1,6 @@
 # Mantine Reflection Component
 
-<img alt="Mantine Reflection" src="https://github.com/gfazioli/mantine-reflection/blob/master/logo.png" />
+<img alt="Mantine Reflection" src="https://github.com/gfazioli/mantine-reflection/blob/master/logo.jpeg" />
 
 <div align="center">
 

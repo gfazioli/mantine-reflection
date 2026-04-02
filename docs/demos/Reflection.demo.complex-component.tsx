@@ -82,7 +82,7 @@ function Demo() {
 export const complexComponent: MantineDemo = {
   type: 'code',
   component: Wrapper,
-  minHeight: 600,
+  minHeight: 900,
   code,
   defaultExpanded: false,
 };

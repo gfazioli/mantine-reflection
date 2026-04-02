@@ -6,6 +6,7 @@
     position: relative;
   }
 
+  /* Shadow via pseudo-element on first child */
   &[data-shadow] {
     & > *:first-child::after {
       content: '';
@@ -16,18 +17,25 @@
       height: var(--shadow-size, 10);
       background: radial-gradient(
         ellipse at center,
-        var(--shadow-color, 'black') 0%,
+        var(--shadow-color, black) 0%,
         rgba(0, 0, 0, 0) 70%
       );
       transform: scaleX(var(--shadow-scale-x, 1.1)) scaleY(var(--shadow-scale-y, 1));
       opacity: var(--shadow-opacity);
-      /** apply the blur filter to the shadow */
       filter: blur(var(--shadow-blur));
       z-index: -1;
     }
   }
+
+  /* Auto shadow color: black in light mode, white in dark mode */
+  &[data-shadow-auto] {
+    & > *:first-child::after {
+      --shadow-color: light-dark(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.5));
+    }
+  }
 }
 
+/* Outer container: handles fade gradient mask + positioning */
 .reflection {
   --reflection-distance-xs: rem(18px);
   --reflection-distance-sm: rem(22px);
@@ -37,6 +45,7 @@
 
   position: absolute;
   top: calc(100% + var(--reflection-distance, 0));
+  left: 0;
   transform: scaleY(-1) scaleY(var(--reflection-stretch, 1));
   opacity: var(--reflection-opacity);
   -webkit-mask-image: linear-gradient(
@@ -50,6 +59,30 @@
     black var(--reflection-end)
   );
   pointer-events: none;
-  filter: blur(var(--reflection-blur));
   z-index: -2;
+
+  /*
+   * Apply blur + ripple filter via CSS variable.
+   * When ripple is enabled, --reflection-filter includes both blur and SVG filter URL.
+   * When only blur, it only includes the blur.
+   * This avoids inline style overriding the mask-image.
+   */
+  filter: var(--reflection-filter, blur(var(--reflection-blur)));
+
+  /*
+   * Padding prevents both blur and ripple displacement clipping.
+   * --reflection-blur-padding compensates for blur radius.
+   * --reflection-ripple-padding compensates for displacement map overflow.
+   * Negative margin offsets the padding so layout stays correct.
+   */
+  overflow: visible;
+  padding: calc(var(--reflection-blur-padding, 0px) + var(--reflection-ripple-padding, 0px));
+  margin: calc(-1 * (var(--reflection-blur-padding, 0px) + var(--reflection-ripple-padding, 0px)));
+}
+
+/* Reduced motion: disable blur and ripple */
+@media (prefers-reduced-motion: reduce) {
+  .reflection {
+    filter: none !important;
+  }
 }

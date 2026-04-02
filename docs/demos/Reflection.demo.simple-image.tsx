@@ -23,6 +23,7 @@ function Wrapper(props: any) {
 
 const code = `
 import { Reflection } from '@gfazioli/mantine-reflection';
+import { Group } from '@mantine/core';
 
 function Demo() {
   return (
@@ -36,7 +37,7 @@ function Demo() {
         />
       </Reflection>
 
-      <Reflection {...props}>
+      <Reflection>
         <img width={150} alt="test" src="https://picsum.photos/150/150" />
       </Reflection>
     </Group>

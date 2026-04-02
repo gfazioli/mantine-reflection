@@ -15,6 +15,7 @@ export const ReflectionStylesApi: StylesApiData<ReflectionFactory> = {
       '--shadow-color': 'Controls the shadow `color`',
     },
     reflection: {
+      '--reflection-distance': 'Controls the reflection `distance` (supports responsive values)',
       '--reflection-opacity': 'Controls the reflection `opacity`',
       '--reflection-start': 'Controls the reflection gradient `start`',
       '--reflection-end': 'Controls the reflection gradient `end`',

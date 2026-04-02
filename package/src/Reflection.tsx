@@ -27,6 +27,7 @@ export type ReflectionStylesNames = 'root' | 'reflection';
 export type ReflectionCssVariables = {
   root: '--shadow-offset' | '--shadow-opacity' | '--shadow-blur' | '--shadow-color';
   reflection:
+    | '--reflection-distance'
     | '--reflection-opacity'
     | '--reflection-start'
     | '--reflection-end'
@@ -140,6 +141,7 @@ const varsResolver = createVarsResolver<ReflectionFactory>(
   (
     _,
     {
+      reflectionDistance,
       reflectionOpacity,
       reflectionStart,
       reflectionEnd,
@@ -169,6 +171,10 @@ const varsResolver = createVarsResolver<ReflectionFactory>(
         '--shadow-size': getSize(shadowSize, 'shadow-size'),
       },
       reflection: {
+        '--reflection-distance':
+          typeof reflectionDistance !== 'object'
+            ? getSize(reflectionDistance, 'reflection-distance')
+            : undefined,
         '--reflection-opacity': reflectionOpacity?.toString(),
         '--reflection-start': `${reflectionStart?.toString() || '25'}%` as string,
         '--reflection-end': `${reflectionEnd?.toString() || '75'}%` as string,

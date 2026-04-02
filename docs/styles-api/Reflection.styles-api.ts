@@ -15,14 +15,16 @@ export const ReflectionStylesApi: StylesApiData<ReflectionFactory> = {
       '--shadow-color': 'Controls the shadow `color`',
     },
     reflection: {
-      '--reflection-distance': 'Controls the reflection `distance`',
       '--reflection-opacity': 'Controls the reflection `opacity`',
-      '--reflection-start': 'Controls the reflection `start`',
-      '--reflection-end': 'Controls the reflection `end`',
+      '--reflection-start': 'Controls the reflection gradient `start`',
+      '--reflection-end': 'Controls the reflection gradient `end`',
       '--reflection-stretch': 'Controls the reflection `stretch`',
       '--reflection-blur': 'Controls the reflection `blur`',
     },
   },
 
-  modifiers: [{ modifier: 'data-shadow', selector: 'root', condition: '`true` prop is set' }],
+  modifiers: [
+    { modifier: 'data-shadow', selector: 'root', condition: '`shadow` prop is `true`' },
+    { modifier: 'data-shadow-auto', selector: 'root', condition: '`shadowColor` is `auto`' },
+  ],
 };

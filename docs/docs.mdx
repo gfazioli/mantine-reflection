@@ -23,13 +23,23 @@ The `Reflection` component simply wraps the content to be reflected.
 
 <Demo data={demos.configurator} />
 
-> **Reflection Blur**: The `Reflection` component has a `reflectionBlur` prop that can be used to add a blur effect to the reflection. The value is a number that represents the amount of blur in pixels. The default value is `0`. You will probably notice that in the image above, as the blur effect on the reflection increases, the edges of the image will be cut off. To avoid this problem, you can adjust the blur effect with low values or apply padding to the component/image to be reflected.
+> **Reflection Blur**: The `reflectionBlur` prop adds a blur effect to the reflection. The blur is automatically padded to prevent edge clipping — no manual padding needed.
 
 ## The Image tag
 
 The `img` tag requires to be in `display: block` in order to avoid padding below it. For this reason, a `style` has been added to force the behavior.
 
 <Demo data={demos.simpleImage} />
+
+## Responsive reflection distance
+
+The `reflectionDistance` prop supports responsive values using Mantine breakpoint objects:
+
+```tsx
+<Reflection reflectionDistance={{ base: 0, sm: 10, md: 20 }}>
+  <img ... />
+</Reflection>
+```
 
 ## Components
 
@@ -39,6 +49,30 @@ You may use the `Reflection` component to reflect other components.
 
 ## Example: Complex components
 
-For complex components, you may need to disable certain components to prevent the mirrored version from functioning as a copy. In this example, we used the prop `disableChildren` for the right component. Mouse click is always disabled via CSS, but moving with the TAB key will focus on the mirrored component.
+For complex components, you may need to disable certain components to prevent the mirrored version from functioning as a copy. In this example, we used the prop `disableChildren` for the right component. When enabled, all interactive elements in the reflection are set to `disabled` with `tabIndex={-1}`, preventing both mouse and keyboard interaction. The reflection is also marked as `aria-hidden` for screen readers.
 
 <Demo data={demos.complexComponent} />
+
+## Water ripple effect
+
+Set `ripple` to add a water distortion effect to the reflection using SVG filters (`feTurbulence` + `feDisplacementMap`). Configure the effect with:
+- `rippleStrength` (1-50, default 4) — distortion intensity
+- `rippleFrequency` (default 0.01) — wave density, higher = more waves
+- `rippleSpeed` (0-10, default 3) — animation speed, higher = faster, 0 for static
+- `rippleOctaves` (1-4, default 1) — noise detail level
+- `rippleSeed` (default 1) — seed for reproducible patterns
+
+<Demo data={demos.ripple} />
+
+## Dark mode shadow
+
+Set `shadowColor="auto"` to automatically switch the shadow color between black (light mode) and white (dark mode). This uses CSS `light-dark()` for seamless theme adaptation.
+
+<Demo data={demos.darkModeShadow} />
+
+## Accessibility
+
+The reflection is purely decorative:
+- The reflection div is marked with `aria-hidden="true"` and `role="presentation"`
+- When `disableChildren` is enabled, all interactive elements are set to `disabled` with `tabIndex={-1}`
+- The `reflectionBlur` filter is automatically disabled when the user has `prefers-reduced-motion` enabled in their OS settings

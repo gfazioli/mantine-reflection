@@ -18,15 +18,27 @@
 ## Overview
 
 This component is created on top of the [Mantine](https://mantine.dev/) library.
+It requires **Mantine 9.x** and **React 19**.
 
-[Mantine Reflection](https://gfazioli.github.io/mantine-mask/) provides a simple wrapper—Reflection—that adds a mirrored version of its children, enabling polished visual effects for images and components within Mantine‑based interfaces. Developers can tune reflection characteristics including distance from the source, opacity, blur level, stretch, and gradient start/end to achieve subtle or pronounced looks. It also includes comprehensive shadow controls (offset, opacity, blur, size, scale X/Y, and color) to complement the reflection for more realistic depth.
+[Mantine Reflection](https://gfazioli.github.io/mantine-reflection/) adds a mirrored reflection effect to any React component or image.
 
-The package ships global styles via styles.css and a layer‑scoped variant via styles.layer.css for integration with CSS @layer mantine-reflection. When reflecting images, setting display: block on img prevents baseline padding artifacts. A dedicated reflectionBlur prop adds pixel‑based blur to the reflection, with guidance to use small values or padding to avoid edge clipping. Overall, the component is designed to be drop‑in, flexible, and precise for creating refined mirror and shadow effects around arbitrary React children.
+## Features
+
+- 🪞 **Reflection effect**: Mirror any React children with configurable opacity, blur, stretch, and gradient fade
+- 🎨 **Shadow system**: Independent shadow controls (offset, opacity, blur, color, scaleX/Y, size)
+- 🌗 **Dark mode shadow**: `shadowColor="auto"` for automatic light/dark theme adaptation
+- 📱 **Responsive**: `reflectionDistance` supports Mantine breakpoint objects
+- 🌊 **Water ripple effect**: Animated distortion via SVG filters (`ripple`, `rippleStrength`, `rippleFrequency`, `rippleSpeed`)
+- 🔒 **Disable children**: Prevent interaction in the reflected copy with `disableChildren`
+- ♿ **Accessible**: `aria-hidden`, non-focusable, `prefers-reduced-motion` support
+- 🎨 **Styles API**: Full Mantine Styles API support
+- 📦 **TypeScript**: Full type safety out of the box
 
 > [!note]
 >
-> → [Demo and Documentation](https://gfazioli.github.io/mantine-mask/) → [Youtube Video](https://www.youtube.com/playlist?list=PL85tTROKkZrWyqCcmNCdWajpx05-cTal4) → [More Mantine Components](https://mantine-extensions.vercel.app/)
+> → [Demo and Documentation](https://gfazioli.github.io/mantine-reflection/) → [Youtube Video](https://www.youtube.com/playlist?list=PL85tTROKkZrWyqCcmNCdWajpx05-cTal4) → [More Mantine Components](https://mantine-extensions.vercel.app/)
 
+## Installation
 
 ## Installation
 

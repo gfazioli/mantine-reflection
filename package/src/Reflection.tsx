@@ -159,7 +159,8 @@ const varsResolver = createVarsResolver<ReflectionFactory>(
     // 'auto' shadowColor resolves via CSS light-dark() in the stylesheet
     const resolvedShadowColor = shadowColor === 'auto' ? undefined : shadowColor;
     const isResponsiveBlur = typeof reflectionBlur === 'object' && reflectionBlur !== null;
-    const blurPx = isResponsiveBlur ? 0 : ((reflectionBlur as number) ?? 0);
+    const isStringBlur = typeof reflectionBlur === 'string';
+    const blurPx = isResponsiveBlur || isStringBlur ? 0 : ((reflectionBlur as number) ?? 0);
 
     return {
       root: {
@@ -182,9 +183,19 @@ const varsResolver = createVarsResolver<ReflectionFactory>(
         '--reflection-start': `${reflectionStart?.toString() || '25'}%` as string,
         '--reflection-end': `${reflectionEnd?.toString() || '75'}%` as string,
         '--reflection-stretch': reflectionStretch?.toString() || '1',
-        '--reflection-blur': !isResponsiveBlur ? rem(blurPx) : undefined,
+        '--reflection-blur': !isResponsiveBlur
+          ? isStringBlur
+            ? (reflectionBlur as string)
+            : rem(blurPx)
+          : undefined,
         // Padding to prevent blur clipping: blur radius + 2px safety margin
-        '--reflection-blur-padding': !isResponsiveBlur && blurPx > 0 ? rem(blurPx + 2) : undefined,
+        '--reflection-blur-padding': !isResponsiveBlur
+          ? isStringBlur
+            ? `calc(${reflectionBlur as string} + ${rem(2)})`
+            : blurPx > 0
+              ? rem(blurPx + 2)
+              : undefined
+          : undefined,
       },
     };
   }
@@ -242,12 +253,15 @@ function ReflectionMediaVariables({
     {
       prop: reflectionBlur,
       cssVar: '--reflection-blur',
-      resolve: (val) => rem(val as number),
+      resolve: (val) => (typeof val === 'string' ? val : rem(val as number)),
     },
     {
       prop: reflectionBlur,
       cssVar: '--reflection-blur-padding',
       resolve: (val) => {
+        if (typeof val === 'string') {
+          return `calc(${val} + ${rem(2)})`;
+        }
         const v = val as number;
         return v > 0 ? rem(v + 2) : undefined;
       },

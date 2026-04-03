@@ -50,8 +50,8 @@ Responsive values are resolved via a `ReflectionMediaVariables` component using 
 
 ### Water ripple effect
 `ripple` enables a water distortion effect on the reflection using an inline SVG filter with `feTurbulence` + `feDisplacementMap`. Each instance gets a unique filter ID via `useId()`. Configuration:
-- `rippleStrength` (1-50, default 10) — displacement map scale
-- `rippleFrequency` (default 0.02) — turbulence base frequency
+- `rippleStrength` (1-50, default 4) — displacement map scale
+- `rippleFrequency` (default 0.01) — turbulence base frequency
 - `rippleSpeed` (seconds, default 3) — SVG `<animate>` duration (0 = static)
 
 ### Blur without edge clipping

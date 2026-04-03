@@ -26,9 +26,10 @@ It requires **Mantine 9.x** and **React 19**.
 
 - 🪞 **Reflection effect**: Mirror any React children with configurable opacity, blur, stretch, and gradient fade
 - 🎨 **Shadow system**: Independent shadow controls (offset, opacity, blur, color, scaleX/Y, size)
-- 🌗 **Dark mode shadow**: `shadowColor="auto"` for automatic light/dark theme adaptation
+- 🌗 **Dark mode shadow**: `shadowColor="auto"` for automatic light/dark theme adaptation via CSS `light-dark()`
 - 📱 **Responsive**: `reflectionDistance`, `reflectionOpacity`, `reflectionBlur`, and `shadowSize` support Mantine breakpoint objects via CSS media queries (no React re-renders)
-- 🌊 **Water ripple effect**: Animated distortion via SVG filters (`ripple`, `rippleStrength`, `rippleFrequency`, `rippleSpeed`)
+- 🌊 **Water ripple effect**: Animated water distortion via SVG filters (`ripple`, `rippleStrength`, `rippleFrequency`, `rippleSpeed`, `rippleOctaves`, `rippleSeed`)
+- 🔍 **Blur without clipping**: `reflectionBlur` automatically adds padding to prevent edge artifacts
 - 🔒 **Disable children**: Prevent interaction in the reflected copy with `disableChildren`
 - ♿ **Accessible**: `aria-hidden`, non-focusable, `prefers-reduced-motion` support
 - 🎨 **Styles API**: Full Mantine Styles API support
@@ -37,8 +38,6 @@ It requires **Mantine 9.x** and **React 19**.
 > [!note]
 >
 > → [Demo and Documentation](https://gfazioli.github.io/mantine-reflection/) → [Youtube Video](https://www.youtube.com/playlist?list=PL85tTROKkZrWyqCcmNCdWajpx05-cTal4) → [More Mantine Components](https://mantine-extensions.vercel.app/)
-
-## Installation
 
 ## Installation
 

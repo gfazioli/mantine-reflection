@@ -42,8 +42,8 @@ export interface ReflectionBaseProps {
   /** The distance of the reflection from the original element, supports responsive values */
   reflectionDistance?: StyleProp<MantineSize | number | (string & {})>;
 
-  /** The opacity of the reflection */
-  reflectionOpacity?: number;
+  /** The opacity of the reflection, supports responsive values */
+  reflectionOpacity?: StyleProp<number | (string & {})>;
 
   /** The start of the reflection (gradient) */
   reflectionStart?: number;
@@ -54,8 +54,8 @@ export interface ReflectionBaseProps {
   /** The stretch of the reflection. You may want to adjust `reflectionDistance` accordingly */
   reflectionStretch?: number;
 
-  /** The blur of the reflection in pixels. The reflection is padded to prevent blur clipping. @default 0 */
-  reflectionBlur?: number;
+  /** The blur of the reflection in pixels, supports responsive values. The reflection is padded to prevent blur clipping. @default 0 */
+  reflectionBlur?: StyleProp<number | (string & {})>;
 
   /** Enable water ripple distortion effect on the reflection @default false */
   ripple?: boolean;
@@ -96,8 +96,8 @@ export interface ReflectionBaseProps {
   /** The scale of the shadow in the y-axis */
   shadowScaleY?: number;
 
-  /** The size of the shadow */
-  shadowSize?: MantineSize | number | (string & {});
+  /** The size of the shadow, supports responsive values */
+  shadowSize?: StyleProp<MantineSize | number | (string & {})>;
 
   /** Children to reflect */
   children?: React.ReactNode;
@@ -158,7 +158,8 @@ const varsResolver = createVarsResolver<ReflectionFactory>(
   ) => {
     // 'auto' shadowColor resolves via CSS light-dark() in the stylesheet
     const resolvedShadowColor = shadowColor === 'auto' ? undefined : shadowColor;
-    const blurPx = reflectionBlur ?? 0;
+    const isResponsiveBlur = typeof reflectionBlur === 'object' && reflectionBlur !== null;
+    const blurPx = isResponsiveBlur ? 0 : ((reflectionBlur as number) ?? 0);
 
     return {
       root: {
@@ -168,20 +169,22 @@ const varsResolver = createVarsResolver<ReflectionFactory>(
         '--shadow-color': resolvedShadowColor,
         '--shadow-scale-x': shadowScaleX,
         '--shadow-scale-y': shadowScaleY,
-        '--shadow-size': getSize(shadowSize, 'shadow-size'),
+        '--shadow-size':
+          typeof shadowSize !== 'object' ? getSize(shadowSize, 'shadow-size') : undefined,
       },
       reflection: {
         '--reflection-distance':
           typeof reflectionDistance !== 'object'
             ? getSize(reflectionDistance, 'reflection-distance')
             : undefined,
-        '--reflection-opacity': reflectionOpacity?.toString(),
+        '--reflection-opacity':
+          typeof reflectionOpacity !== 'object' ? reflectionOpacity?.toString() : undefined,
         '--reflection-start': `${reflectionStart?.toString() || '25'}%` as string,
         '--reflection-end': `${reflectionEnd?.toString() || '75'}%` as string,
         '--reflection-stretch': reflectionStretch?.toString() || '1',
-        '--reflection-blur': rem(blurPx),
+        '--reflection-blur': !isResponsiveBlur ? rem(blurPx) : undefined,
         // Padding to prevent blur clipping: blur radius + 2px safety margin
-        '--reflection-blur-padding': blurPx > 0 ? rem(blurPx + 2) : undefined,
+        '--reflection-blur-padding': !isResponsiveBlur && blurPx > 0 ? rem(blurPx + 2) : undefined,
       },
     };
   }
@@ -205,37 +208,89 @@ function setDisabledRecursive(children: ReactNode): ReactNode {
   });
 }
 
-/** Responsive CSS variables for reflection-distance via InlineStyles + media queries */
+/** Responsive CSS variables via InlineStyles + media queries (Mantine-native pattern) */
 function ReflectionMediaVariables({
   reflectionDistance,
+  reflectionOpacity,
+  reflectionBlur,
+  shadowSize,
   selector,
 }: {
-  reflectionDistance: StyleProp<MantineSize | number | (string & {})>;
+  reflectionDistance?: StyleProp<MantineSize | number | (string & {})>;
+  reflectionOpacity?: StyleProp<number | (string & {})>;
+  reflectionBlur?: StyleProp<number | (string & {})>;
+  shadowSize?: StyleProp<MantineSize | number | (string & {})>;
   selector: string;
 }) {
   const theme = useMantineTheme();
-  const baseValue = getBaseValue(reflectionDistance);
 
+  const responsiveEntries: Array<{
+    prop: unknown;
+    cssVar: string;
+    resolve: (val: unknown) => string | undefined;
+  }> = [
+    {
+      prop: reflectionDistance,
+      cssVar: '--reflection-distance',
+      resolve: (val) => getSize(val, 'reflection-distance'),
+    },
+    {
+      prop: reflectionOpacity,
+      cssVar: '--reflection-opacity',
+      resolve: (val) => val?.toString(),
+    },
+    {
+      prop: reflectionBlur,
+      cssVar: '--reflection-blur',
+      resolve: (val) => rem(val as number),
+    },
+    {
+      prop: reflectionBlur,
+      cssVar: '--reflection-blur-padding',
+      resolve: (val) => {
+        const v = val as number;
+        return v > 0 ? rem(v + 2) : undefined;
+      },
+    },
+    {
+      prop: shadowSize,
+      cssVar: '--shadow-size',
+      resolve: (val) => getSize(val, 'shadow-size'),
+    },
+  ];
+
+  // Collect base values for responsive props only
   const baseStyles: Record<string, string | undefined> = {};
-  if (baseValue !== undefined) {
-    baseStyles['--reflection-distance'] = getSize(baseValue, 'reflection-distance');
+  for (const { prop, cssVar, resolve } of responsiveEntries) {
+    if (typeof prop === 'object' && prop !== null) {
+      const baseValue = getBaseValue(prop);
+      if (baseValue !== undefined) {
+        const resolved = resolve(baseValue);
+        if (resolved !== undefined) {
+          baseStyles[cssVar] = resolved;
+        }
+      }
+    }
   }
 
+  // Build breakpoint queries combining all responsive props
   const queries = keys(theme.breakpoints).reduce<Record<string, Record<string, string | number>>>(
     (acc, breakpoint) => {
       if (!acc[breakpoint]) {
         acc[breakpoint] = {};
       }
 
-      if (
-        typeof reflectionDistance === 'object' &&
-        reflectionDistance !== null &&
-        (reflectionDistance as Record<string, unknown>)[breakpoint] !== undefined
-      ) {
-        const val = (reflectionDistance as Record<string, unknown>)[breakpoint];
-        const resolved = getSize(val, 'reflection-distance');
-        if (resolved !== undefined) {
-          acc[breakpoint]['--reflection-distance'] = resolved;
+      for (const { prop, cssVar, resolve } of responsiveEntries) {
+        if (
+          typeof prop === 'object' &&
+          prop !== null &&
+          (prop as Record<string, unknown>)[breakpoint] !== undefined
+        ) {
+          const val = (prop as Record<string, unknown>)[breakpoint];
+          const resolved = resolve(val);
+          if (resolved !== undefined) {
+            acc[breakpoint][cssVar] = resolved;
+          }
         }
       }
 
@@ -324,9 +379,12 @@ export const Reflection = factory<ReflectionFactory>((_props) => {
     return setDisabledRecursive(children);
   }, [children, disableChildren]);
 
-  // Check if reflectionDistance is responsive (object with breakpoints)
-  const isResponsiveDistance =
-    typeof reflectionDistance === 'object' && reflectionDistance !== null;
+  // Check if any prop is responsive (object with breakpoints)
+  const isResponsive =
+    (typeof reflectionDistance === 'object' && reflectionDistance !== null) ||
+    (typeof reflectionOpacity === 'object' && reflectionOpacity !== null) ||
+    (typeof reflectionBlur === 'object' && reflectionBlur !== null) ||
+    (typeof shadowSize === 'object' && shadowSize !== null);
 
   // Unique ID for SVG filter to avoid conflicts with multiple instances
   const filterId = useId();
@@ -344,9 +402,12 @@ export const Reflection = factory<ReflectionFactory>((_props) => {
 
   return (
     <>
-      {isResponsiveDistance && (
+      {isResponsive && (
         <ReflectionMediaVariables
           reflectionDistance={reflectionDistance}
+          reflectionOpacity={reflectionOpacity}
+          reflectionBlur={reflectionBlur}
+          shadowSize={shadowSize}
           selector={`.${responsiveClassName}`}
         />
       )}
@@ -405,7 +466,7 @@ export const Reflection = factory<ReflectionFactory>((_props) => {
 
       <Box
         {...getStyles('root', {
-          className: isResponsiveDistance ? responsiveClassName : undefined,
+          className: isResponsive ? responsiveClassName : undefined,
         })}
         {...others}
         mod={{

@@ -8,14 +8,21 @@ function Wrapper(props: any) {
       <Reflection {...props}>
         <img
           width={150}
-          style={{ display: 'block' }}
+          height={150}
+          style={{ display: 'block', objectFit: 'cover' }}
           alt="test"
-          src="https://picsum.photos/150/150"
+          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png"
         />
       </Reflection>
 
       <Reflection {...props}>
-        <img width={150} alt="test" src="https://picsum.photos/150/150" />
+        <img
+          width={150}
+          height={150}
+          style={{ objectFit: 'cover' }}
+          alt="test"
+          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png"
+        />
       </Reflection>
     </Group>
   );
@@ -31,14 +38,15 @@ function Demo() {
       <Reflection>
         <img
           width={150}
-          style={{ display: 'block' }}
+          height={150}
+          style={{ display: 'block', objectFit: 'cover' }}
           alt="test"
-          src="https://picsum.photos/150/150"
+          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png"
         />
       </Reflection>
 
       <Reflection>
-        <img width={150} alt="test" src="https://picsum.photos/150/150" />
+        <img width={150} height={150} style={{ objectFit: 'cover' }} alt="test" src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-2.png" />
       </Reflection>
     </Group>
   );

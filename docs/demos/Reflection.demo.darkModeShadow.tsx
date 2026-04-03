@@ -8,9 +8,10 @@ function Demo() {
     <Reflection shadowColor="auto">
       <img
         width={150}
-        style={{ display: 'block', borderRadius: '50%' }}
+        height={150}
+        style={{ display: 'block', borderRadius: '50%', objectFit: 'cover' }}
         alt="auto shadow"
-        src="https://picsum.photos/150/150"
+        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-5.png"
       />
     </Reflection>
   );
@@ -22,9 +23,10 @@ function Demo() {
     <Reflection shadowColor="auto">
       <img
         width={150}
-        style={{ display: 'block', borderRadius: '50%' }}
+        height={150}
+        style={{ display: 'block', borderRadius: '50%', objectFit: 'cover' }}
         alt="auto shadow"
-        src="https://picsum.photos/150/150"
+        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-5.png"
       />
     </Reflection>
   );

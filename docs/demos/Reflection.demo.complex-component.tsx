@@ -11,9 +11,12 @@ function Wrapper() {
             <img
               style={{
                 borderRadius: '8px',
+                width: '100%',
+                height: 200,
+                objectFit: 'cover',
               }}
               alt="test"
-              src="https://picsum.photos/150/150"
+              src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-3.png"
             />
             <Input placeholder="Click and press TAB 2 times" />
             <Button>Cancel</Button>
@@ -26,9 +29,12 @@ function Wrapper() {
             <img
               style={{
                 borderRadius: '8px',
+                width: '100%',
+                height: 200,
+                objectFit: 'cover',
               }}
               alt="test"
-              src="https://picsum.photos/150/150"
+              src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-3.png"
             />
             <Input placeholder="Your name" />
             <Button>Cancel</Button>
@@ -50,9 +56,12 @@ function Demo() {
           <img
             style={{
               borderRadius: '8px',
+              width: '100%',
+              height: 150,
+              objectFit: 'cover',
             }}
             alt="test"
-            src="https://source.unsplash.com/k5brbv8T3yE/150x150"
+            src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-3.png"
           />
           <Input placeholder="Click and press TAB 2 times" />
           <Button>Cancel</Button>
@@ -65,9 +74,12 @@ function Demo() {
           <img
             style={{
               borderRadius: '8px',
+              width: '100%',
+              height: 150,
+              objectFit: 'cover',
             }}
             alt="test"
-            src="https://source.unsplash.com/k5brbv8T3yE/150x150"
+            src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-3.png"
           />
           <Input placeholder="Your name" />
           <Button>Cancel</Button>
@@ -82,7 +94,7 @@ function Demo() {
 export const complexComponent: MantineDemo = {
   type: 'code',
   component: Wrapper,
-  minHeight: 900,
+  minHeight: 550,
   code,
   defaultExpanded: false,
 };

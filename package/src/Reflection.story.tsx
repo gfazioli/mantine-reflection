@@ -34,7 +34,7 @@ export function Usage(props: ReflectionProps) {
           width={150}
           style={{ display: 'block' }}
           alt="test"
-          src="https://picsum.photos/150/150"
+          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png"
         />
       </Reflection>
     </Center>
@@ -49,7 +49,7 @@ export function Image(props: ReflectionProps) {
           width={150}
           style={{ display: 'block', borderRadius: '50%' }}
           alt="test"
-          src="https://picsum.photos/150/150"
+          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png"
         />
       </Reflection>
     </Center>
@@ -77,7 +77,7 @@ export function ComplexComponent(props: ReflectionProps) {
                 borderRadius: '8px',
               }}
               alt="test"
-              src="https://picsum.photos/150/150"
+              src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png"
             />
             <Input placeholder="Your name" />
             <Button>Cancel</Button>

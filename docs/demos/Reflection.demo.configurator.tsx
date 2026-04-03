@@ -6,9 +6,10 @@ function Wrapper(props: any) {
     <Reflection {...props}>
       <img
         width={150}
-        style={{ display: 'block', borderRadius: '50%' }}
+        height={150}
+        style={{ display: 'block', borderRadius: '50%', objectFit: 'cover' }}
         alt="test"
-        src="https://picsum.photos/150/150"
+        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png"
       />
     </Reflection>
   );
@@ -20,7 +21,7 @@ import { Reflection } from '@gfazioli/mantine-reflection';
 function Demo() {
   return (
     <Reflection{{props}}>
-      <img width={150} style={{ display: 'block', borderRadius: '50%' }} alt="test" src="https://picsum.photos/150/150"
+      <img width={150} height={150} style={{ display: 'block', borderRadius: '50%', objectFit: 'cover' }} alt="test" src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png"
       />
     </Reflection>
   );

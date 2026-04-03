@@ -1,3 +1,4 @@
+import { Table, Code } from '@mantine/core';
 import { InstallScript } from './components/InstallScript/InstallScript';
 import * as demos from './demos';
 
@@ -31,15 +32,53 @@ The `img` tag requires to be in `display: block` in order to avoid padding below
 
 <Demo data={demos.simpleImage} />
 
-## Responsive reflection distance
+## Responsive props
 
-The `reflectionDistance` prop supports responsive values using Mantine breakpoint objects:
+Several props support responsive values using Mantine breakpoint objects — the same pattern used by Mantine core components like `SimpleGrid`. Under the hood, CSS media queries are generated via `InlineStyles`, so there are **no React re-renders** on resize.
+
+The following props accept responsive breakpoint objects:
+
+<Table>
+  <Table.Thead>
+    <Table.Tr>
+      <Table.Th>Prop</Table.Th>
+      <Table.Th>Description</Table.Th>
+    </Table.Tr>
+  </Table.Thead>
+  <Table.Tbody>
+    <Table.Tr>
+      <Table.Td><Code>reflectionDistance</Code></Table.Td>
+      <Table.Td>Distance between the original element and the reflection</Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td><Code>reflectionOpacity</Code></Table.Td>
+      <Table.Td>Opacity of the reflection (e.g., reduce on mobile)</Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td><Code>reflectionBlur</Code></Table.Td>
+      <Table.Td>Blur applied to the reflection (e.g., softer on small screens)</Table.Td>
+    </Table.Tr>
+    <Table.Tr>
+      <Table.Td><Code>shadowSize</Code></Table.Td>
+      <Table.Td>Shadow size below the original element</Table.Td>
+    </Table.Tr>
+  </Table.Tbody>
+</Table>
 
 ```tsx
-<Reflection reflectionDistance={{ base: 0, sm: 10, md: 20 }}>
+<Reflection
+  reflectionDistance={{ base: 0, sm: 8, md: 16 }}
+  reflectionOpacity={{ base: 0.15, sm: 0.25, md: 0.4 }}
+  reflectionBlur={{ base: 2, sm: 1, md: 0 }}
+  shadowSize={{ base: 5, sm: 8, md: 12 }}
+>
   <img ... />
 </Reflection>
 ```
+
+Each prop also accepts a static value as before — responsive objects are entirely optional.
+
+<Demo data={demos.responsive} />
 
 ## Components
 

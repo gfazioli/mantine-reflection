@@ -27,7 +27,7 @@ It requires **Mantine 9.x** and **React 19**.
 - 🪞 **Reflection effect**: Mirror any React children with configurable opacity, blur, stretch, and gradient fade
 - 🎨 **Shadow system**: Independent shadow controls (offset, opacity, blur, color, scaleX/Y, size)
 - 🌗 **Dark mode shadow**: `shadowColor="auto"` for automatic light/dark theme adaptation
-- 📱 **Responsive**: `reflectionDistance` supports Mantine breakpoint objects
+- 📱 **Responsive**: `reflectionDistance`, `reflectionOpacity`, `reflectionBlur`, and `shadowSize` support Mantine breakpoint objects via CSS media queries (no React re-renders)
 - 🌊 **Water ripple effect**: Animated distortion via SVG filters (`ripple`, `rippleStrength`, `rippleFrequency`, `rippleSpeed`)
 - 🔒 **Disable children**: Prevent interaction in the reflected copy with `disableChildren`
 - ♿ **Accessible**: `aria-hidden`, non-focusable, `prefers-reduced-motion` support
@@ -69,7 +69,7 @@ function Demo() {
         width={150}
         style={{ display: 'block', borderRadius: '50%' }}
         alt="test"
-        src="https://source.unsplash.com/9QmbsTDAI4g/150x150"
+        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-1.png"
       />
     </Reflection>
   );

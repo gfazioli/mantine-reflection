@@ -8,9 +8,10 @@ function Demo() {
     <Reflection ripple rippleStrength={8} rippleFrequency={0.015} rippleSpeed={4}>
       <img
         width={200}
-        style={{ display: 'block', borderRadius: 8 }}
+        height={200}
+        style={{ display: 'block', borderRadius: 8, objectFit: 'cover' }}
         alt="ripple"
-        src="https://picsum.photos/200/200"
+        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-4.png"
       />
     </Reflection>
   );
@@ -22,9 +23,10 @@ function Demo() {
     <Reflection ripple rippleStrength={8} rippleFrequency={0.015} rippleSpeed={4}>
       <img
         width={200}
-        style={{ display: 'block', borderRadius: 8 }}
+        height={200}
+        style={{ display: 'block', borderRadius: 8, objectFit: 'cover' }}
         alt="ripple"
-        src="https://picsum.photos/200/200"
+        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-4.png"
       />
     </Reflection>
   );

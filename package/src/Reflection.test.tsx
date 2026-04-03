@@ -137,6 +137,51 @@ describe('Reflection', () => {
     expect(container.firstChild).toBeTruthy();
   });
 
+  // Responsive reflectionOpacity
+  it('accepts responsive reflectionOpacity object', () => {
+    const { container } = render(
+      <Reflection reflectionOpacity={{ base: 0.3, md: 0.5 }}>
+        <div>Test</div>
+      </Reflection>
+    );
+    expect(container.firstChild).toBeTruthy();
+  });
+
+  // Responsive reflectionBlur
+  it('accepts responsive reflectionBlur object', () => {
+    const { container } = render(
+      <Reflection reflectionBlur={{ base: 0, md: 4 }}>
+        <div>Test</div>
+      </Reflection>
+    );
+    expect(container.firstChild).toBeTruthy();
+  });
+
+  // Responsive shadowSize
+  it('accepts responsive shadowSize object', () => {
+    const { container } = render(
+      <Reflection shadowSize={{ base: 'sm', md: 'lg' }}>
+        <div>Test</div>
+      </Reflection>
+    );
+    expect(container.firstChild).toBeTruthy();
+  });
+
+  // Multiple responsive props at once
+  it('accepts multiple responsive props simultaneously', () => {
+    const { container } = render(
+      <Reflection
+        reflectionDistance={{ base: 0, md: 20 }}
+        reflectionOpacity={{ base: 0.2, md: 0.5 }}
+        reflectionBlur={{ base: 0, lg: 6 }}
+        shadowSize={{ base: 5, md: 15 }}
+      >
+        <div>Test</div>
+      </Reflection>
+    );
+    expect(container.firstChild).toBeTruthy();
+  });
+
   // Shadow auto color test
   it('renders with data-shadow-auto when shadowColor="auto"', () => {
     const { container } = render(

@@ -1,5 +1,5 @@
-import React from 'react';
 import { Button, Center, Input, Paper, Stack } from '@mantine/core';
+import React from 'react';
 import { defaultProps, Reflection, ReflectionProps } from './Reflection';
 
 export default {

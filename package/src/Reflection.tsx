@@ -1,4 +1,3 @@
-import React, { ReactNode, useId, useMemo } from 'react';
 import {
   Box,
   BoxProps,
@@ -20,6 +19,7 @@ import {
   useStyles,
   type MantineBreakpoint,
 } from '@mantine/core';
+import React, { ReactNode, useId, useMemo } from 'react';
 import classes from './Reflection.module.css';
 
 export type ReflectionStylesNames = 'root' | 'reflection';

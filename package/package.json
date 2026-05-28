@@ -1,6 +1,6 @@
 {
   "name": "@gfazioli/mantine-reflection",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "A Mantine 9 React component that adds a mirror reflection effect to images and components — configurable opacity, blur, stretch, gradient fade, shadow system, water ripple effect, dark mode shadow, and responsive props via CSS media queries.",
   "homepage": "https://gfazioli.github.io/mantine-reflection/",
   "packageManager": "yarn@4.0.1",
